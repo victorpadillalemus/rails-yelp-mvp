@@ -1,0 +1,15 @@
+
+<h1>Restaurants</h1>
+<% @restaurants.each do |r| %>
+  <div class="cards" style="width: 18rem;">
+    <img class="card-img-top" src="https://source.unsplash.com/1600x900/?restaurants/" alt="Card image cap">
+    <div class="card-body">
+        <h2 class="card-title"><%= r.name %></h2>
+        <h4 class="card-text"><%= r.address %></h4>
+        <h5 class="card-text"><%= r.category%></h5>
+      <p><%= link_to 'See details', restaurant_path(r), class:"btn btn-primary flex-end" %></p>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>
